@@ -27,7 +27,7 @@ when you contribute to my code, please follow these rules:
 * 在操作符两边，逗号、冒号、分号的后面，{ 的两侧和 } 的前面，加入空格。
 
 * No spaces after (, [ and before ], ).
-* 在 (、[ 之后和 ]、) 之前没有空格
+* 在 (、[ 之后和 ]、) 之前没有空格。
 
 * Use two spaces before statement modifiers (postfix
   if/unless/while/until/rescue).
@@ -46,7 +46,7 @@ when you contribute to my code, please follow these rules:
 * 使用 RDoc 及其约定来写 API 文档。不要在注释块和 def 间留任何空行。
 
 * Use empty lines to break up a long method into logical paragraphs.
-* 使用空行，将一个很长的方法按逻辑分段
+* 使用空行，将一个很长的方法按逻辑分段。
 
 * Keep lines fewer than 80 characters.
 * 每行不要超过80个字符。
