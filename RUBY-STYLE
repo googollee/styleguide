@@ -1,5 +1,5 @@
 = Christian Neukirchen's Ruby Style Guide
-= Christian Neukirchen的Ruby编程风格指南
+= Christian Neukirchen 的 Ruby 编程风格指南
 
 You may not like all rules presented here, but they work very well for
 me and have helped producing high quality code.  Everyone is free to
@@ -14,36 +14,36 @@ when you contribute to my code, please follow these rules:
 == 格式：
 
 * Use ASCII (or UTF-8, if you have to).
-* 使用ASCII（或者UTF-8，如果你不得不用的话）。
+* 使用 ASCII（或者 UTF-8，如果你不得不用的话）。
 
 * Use 2 space indent, no tabs.
-* 使用2个空格做缩进，不要用tab。
+* 使用2个空格做缩进，不要用 tab。
 
 * Use Unix-style line endings.
-* 使用Unix风格的换行做行尾。
+* 使用 Unix 风格的换行做行尾。
 
 * Use spaces around operators, after commas, colons and semicolons,
   around { and before }.
-* 在操作符两边，逗号、冒号、分号的后面，{的两侧和}的前面，加入空格。
+* 在操作符两边，逗号、冒号、分号的后面，{ 的两侧和 } 的前面，加入空格。
 
 * No spaces after (, [ and before ], ).
-* 在(、[之后和]、)之前没有空格
+* 在 (、[ 之后和 ]、) 之前没有空格
 
 * Use two spaces before statement modifiers (postfix
   if/unless/while/until/rescue).
-* 在声明修饰符前加入两个空格（在if/unless/while/until/rescue的后面）
+* 在声明修饰符前加入两个空格（在 if/unless/while/until/rescue 的后面）
 
 * Indent when as deep as case.
 * 按照情形进行缩进，不要过多缩进。
 
 * Use an empty line before the return value of a method (unless it
   only has one line), and an empty line between defs.
-* 在方法的return语句前留一个空行（除非只有一行），在def前后都留一个空
-  行。
+* 在方法的 return 语句前留一个空行（除非只有一行），在 def 前后都留一个
+  空行。
 
 * Use RDoc and its conventions for API documentation.  Don't put an
   empty line between the comment block and the def.
-* 使用RDoc及其约定来写API文档。不要在注释块和def间留任何空行）
+* 使用 RDoc 及其约定来写 API 文档。不要在注释块和 def 间留任何空行。
 
 * Use empty lines to break up a long method into logical paragraphs.
 * 使用空行，将一个很长的方法按逻辑分段
@@ -59,25 +59,25 @@ when you contribute to my code, please follow these rules:
 == 语法：
 
 * Use def with parentheses when there are arguments.
-* 如果有参数时，def后面要用括号包住参数。
+* 如果有参数时，def 后面要用括号包住参数。
 
 * Never use for, unless you exactly know why.
-* 永远不要用for，除非你确确实实知道你在做啥。
+* 永远不要用 for，除非你确确实实知道你在做啥。
 
 * Never use then.
-* 永远不要用then。
+* 永远不要用 then 。
 
 * Use when x; ... for one-line cases.
-* 在条件语句只有一行的情况下，使用when x; ...
+* 在条件语句只有一行的情况下，使用 when x; ...
 
 * Use &&/|| for boolean expressions, and/or for control flow.  (Rule
   of thumb: If you have to use outer parentheses, you are using the
   wrong operators.)
-* 在布尔表达式里使用&&/||，在程序流程控制里使用and/or。（小提示：如果
-  你不得不在最外层加括号，那你就用错操作符了。）
+* 在布尔表达式里使用 &&/||，在程序流程控制里使用 and/or。（小提示：如
+  果你不得不在最外层加括号，那你就用错操作符了。）
 
 * Avoid multiline ?:, use if.
-* 杜绝多行使用?:，多行的情况下应该用if。
+* 杜绝多行使用 ?: ，多行的情况下应该用 if 。
 
 * Suppress superfluous parentheses when calling methods, but keep them
   when calling "functions", i.e. when you use the return value in the
@@ -93,44 +93,44 @@ when you contribute to my code, please follow these rules:
   makes it easier to see what ends where.  But use do...end for
   "control flow" and "method definitions" (e.g. in Rakefiles and
   certain DSLs.)  Avoid do...end when chaining.
-* 使用{...}好过do...end。多行情况使用{...}也很好：可以用不同的结束符标识
-  不同的内容（}标识块，而end标识if/while/...），这样可以很容易看出到哪里
-  结束。不过在“程序流程控制”和“定义方法”时使用do...end（比如，在Rakefiles
-  和特定的DSL里）。在链式调用时杜绝do...end。
+* 使用 {...} 好过 do...end 。多行情况使用 {...} 也很好：可以用不同的结束
+  符标识不同的内容（用 } 标识块，而 end 标识 if/while/... ），这样可以很
+  容易看出到哪里结束。不过在“程序流程控制”和“定义方法”时使用 do...end（比
+  如，在 Rakefiles 和特定的 DSL 里）。在链式调用时杜绝 do...end 。
 
 * Avoid return where not required.
-* 杜绝无谓的return。
+* 杜绝无谓的 return。
 
 * Avoid line continuation (\) where not required.
 * 杜绝无谓的续行符（\）。
 
 * Using the return value of = is okay:
-* 可以直接使用=运算符返回的值：
+* 可以直接使用 = 运算符返回的值：
 
     if v = array.grep(/foo/) ...
 
 * Use ||= freely.
-* 请自由使用||=。
+* 请自由使用 ||=。
 
 * Use non-OO regexps (they won't make the code better).  Freely use
   =~, $0-9, $~, $` and $' when needed.
-* 使用非OO风格的正则表达式（OO风格不会让你的代码变得更好）。在需要的时候，
-  自由使用=~，$0-9，$`和$'。
+* 使用非 OO 风格的正则表达式（ OO 风格不会让你的代码变得更好）。在需要的
+  时候，自由使用 =~，$0-9，$` 和 $'。
 
 
 == Naming:
 == 命名：
 
 * Use snake_case for methods.
-* 方法名使用snake_case风格。
+* 方法名使用 snake_case 风格。
 
 * Use CamelCase for classes and modules.  (Keep acronyms like HTTP,
   RFC, XML uppercase.)
-* 类名和模块名使用CamelCase风格。（常用首字母缩写保持大写，比如HTTP，RFC，
-  XML）
+* 类名和模块名使用 CamelCase 风格。（常用首字母缩写保持大写，比如HTTP，
+  RFC，XML）
 
 * Use SCREAMING_SNAKE_CASE for other constants.
-* 其他常量使用SCREAMING_SNAKE_CASE。
+* 其他常量使用 SCREAMING_SNAKE_CASE 。
 
 * The length of an identifier determines its scope.  Use one-letter
   variables for short block/method parameters, according to this
@@ -139,32 +139,32 @@ when you contribute to my code, please follow these rules:
   参数，具体名字如下：
 
     a,b,c: any object
-    a,b,c：任意对象
     d: directory names
-    d：目录名字
     e: elements of an Enumerable
-    e：Enumerable的元素
     ex: rescued exceptions
-    ex：截获的异常
     f: files and file names
-    f：文件对象和文件名
     i,j: indexes
-    i,j：索引
     k: the key part of a hash entry
-    k：哈希项的键值部分
     m: methods
-    m：方法
     o: any object
-    o：任意对象
     r: return values of short methods
-    r：短函数的返回值
     s: strings
-    s：字符串
     v: any value
-    v：任意值
     v: the value part of a hash entry
-    v：哈希项的值部分（和上面一个有毛区别啊！）
     x,y,z: numbers
+    a,b,c：任意对象
+    d：目录名字
+    e：Enumerable的元素
+    ex：截获的异常
+    f：文件对象和文件名
+    i,j：索引
+    k：哈希项的键值部分
+    m：方法
+    o：任意对象
+    r：短函数的返回值
+    s：字符串
+    v：任意值
+    v：哈希项的值部分（和上面一个有毛区别啊！）
     x,y,z：数字
 
   And in general, the first letter of the class name if all objects
@@ -173,7 +173,7 @@ when you contribute to my code, please follow these rules:
   字母来表示。
 
 * Use _ or names prefixed with _ for unused variables.
-* 使用_或者用_做前缀的名字，来表示用不到的变量。
+* 对用不到的变量，使用 _ 或者用 _ 做前缀的名字。
 
 * When using inject with short blocks, name the arguments |a, e|
   (mnemonic: accumulator, element)
@@ -184,8 +184,8 @@ when you contribute to my code, please follow these rules:
 
 * Prefer map over collect, find over detect, find_all over select,
   size over length.
-* 优先使用map而不是collect，优先使用find而不是detect，优先使用find_all而
-  不是select，优先使用size而不是length。
+* 优先使用 map 而不是 collect ，优先使用 find 而不是 detect ，优先使用 find_all
+  而不是 select ，优先使用 size 而不是 length 。
 
 
 == Comments:
@@ -222,7 +222,7 @@ when you contribute to my code, please follow these rules:
 * 将“全局”方法加入到 Kernel （如果你不得不写“全局”方法的话），并将其设为私有的。
 
 * Avoid alias when alias_method will do.
-* 如果alias_method可以做，就不要使用alias。
+* 如果 alias_method 可以做，就不要使用 alias 。
 
 * Use OptionParser for parsing complex command line options and
   ruby -s for trivial command line options.
@@ -262,7 +262,7 @@ when you contribute to my code, please follow these rules:
 * 也别不设计。
 
 * Avoid bugs.
-* 杜绝bugs。（别逗了！）
+* 杜绝 bugs。（别逗了！）
 
 * Read other style guides and apply the parts that don't dissent with
   this list.
